@@ -1,4 +1,4 @@
-use Test::More tests => 2, import => ['!pass'];
+use Test::More tests => 7, import => ['!pass'];
 use strict;
 use warnings;
 
@@ -16,4 +16,11 @@ isa_ok
     emodel->es->transport,
     'ElasticSearch::Transport::HTTPTiny',
     'Configured ES';
+
+isa_ok my $domain = edomain('foo'), 'Elastic::Model::Domain', 'edomain';
+is $domain->name, 'foo', 'edomain name';
+
+isa_ok my $view = eview('user'), 'Elastic::Model::View', 'eview';
+is_deeply $view->domain, ['foo'],  'View has domain foo';
+is_deeply $view->type,   ['user'], 'View has type user';
 
