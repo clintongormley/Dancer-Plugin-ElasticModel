@@ -1,5 +1,9 @@
-0.02    2012-07-14
-        Fixed a github issue
-0.01    2012-07-14
+0.03    2012-07-30
+        Added eview() and edomain() exports
+
+0.02    2012-07-25
+        Add loc() to allow passing of @args
+
+0.01    2012-07-24
         First release
 
