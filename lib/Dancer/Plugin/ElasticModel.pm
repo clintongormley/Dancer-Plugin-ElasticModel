@@ -70,8 +70,6 @@ true;
 
     my $results = eview('users)->search;
 
-    my $results = emodel->view->search;
-
 =head1 DESCRIPTION
 
 Easy access to your L<Elastic::Model>-based application from within your
