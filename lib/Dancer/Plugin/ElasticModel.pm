@@ -15,9 +15,13 @@ register emodel => sub {
 #===================================
 register eview => sub {
 #===================================
-    my $view = shift || '';
-    return _setup_model()->{views}{$view}
-        || die "Unknown view ($view)";
+    my $cache = _setup_model();
+    if ( @_ == 1 ) {
+        my $view = shift || '';
+        return $cache->{views}{$view}
+            || die "Unknown view ($view)";
+    }
+    return $cache->{model}->view(@_);
 };
 
 #===================================
@@ -114,9 +118,14 @@ L</edomain()> is a shortcut for:
 
 =head2 eview()
 
-    $users = eview('users')->search:
+Access the C<views> that you predefined in your L</CONFIG>:
 
-Access the C<views> that you predefined in your L</CONFIG>.
+    $users = eview('users')->search;
+
+Or create a new view:
+
+    $users = eview(domain=>'myapp', type => 'user');
+    $users = eview->domain('myapp')->type('user');
 
 =head1 SEE ALSO
 
