@@ -25,7 +25,7 @@ is
 
 isa_ok
     emodel->es->transport,
-    'ElasticSearch::Transport::HTTPTiny',
+    'Elasticsearch::Transport',
     'Configured ES';
 
 isa_ok my $domain = edomain('foo'), 'Elastic::Model::Domain', 'edomain';

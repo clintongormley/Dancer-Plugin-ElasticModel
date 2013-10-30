@@ -45,7 +45,7 @@ sub _setup_model {
     die "Error loading model ($model_class): $err"
         unless $res;
 
-    my $es = ElasticSearch->new( %{ $settings->{es} || {} } );
+    my $es = Elasticsearch::Compat->new( %{ $settings->{es} || {} } );
     my $model = $model_class->new( es => $es );
 
     my $view_conf = $settings->{views} || {};

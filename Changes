@@ -1,3 +1,6 @@
+0.06    2013-10-30
+        Use Elasticsearch::Compat
+
 0.05    2012-08-04
         eview() can now generate custom views as well as predefined views
         Added request_scope and global_scope config options
