@@ -7,8 +7,8 @@ use Dancer ':syntax';
 use Dancer::Test appdir => path( dirname($0), 'good', 'config.yml' );
 
 BEGIN {
-    use ElasticSearch;
-    unless ( eval { ElasticSearch->new->current_server_version } ) {
+    use Elasticsearch::Compat;
+    unless ( eval { Elasticsearch::Compat->new->current_server_version } ) {
         plan skip_all => 'No elasticsearch server available';
         exit;
     }

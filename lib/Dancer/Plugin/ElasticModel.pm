@@ -115,7 +115,7 @@ L<Elastic::Model>).
 =head2 es
 
 Any parameters specified in C<es> will be passed directly to
-L<ElasticSearch/new()>.
+L<Elasticsearch::Compat/new()>.
 
 =head2 views
 
@@ -187,7 +187,7 @@ L<Dancer>
 
 =item *
 
-L<ElasticSearch>
+L<Elasticsearch::Compat>
 
 =back
 
