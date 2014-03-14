@@ -14,6 +14,6 @@ is
 
 isa_ok
     emodel->es->transport,
-    'Elasticsearch::Transport',
+    'Search::Elasticsearch::Transport',
     'Default ES';
 

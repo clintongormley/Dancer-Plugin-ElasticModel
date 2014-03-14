@@ -8,8 +8,10 @@ use Dancer ':syntax';
 use Dancer::Test appdir => path( dirname($0), 'good', 'config.yml' );
 
 BEGIN {
-    use Elasticsearch::Compat;
-    unless ( eval { Elasticsearch::Compat->new->current_server_version } ) {
+    use Search::Elasticsearch::Compat;
+    unless (
+        eval { Search::Elasticsearch::Compat->new->current_server_version } )
+    {
         plan skip_all => 'No elasticsearch server available';
         exit;
     }
@@ -25,7 +27,7 @@ is
 
 isa_ok
     emodel->es->transport,
-    'Elasticsearch::Transport',
+    'Search::Elasticsearch::Transport',
     'Configured ES';
 
 isa_ok my $domain = edomain('foo'), 'Elastic::Model::Domain', 'edomain';

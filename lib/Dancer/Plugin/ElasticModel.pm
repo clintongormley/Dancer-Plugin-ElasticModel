@@ -45,7 +45,7 @@ sub _setup_model {
     die "Error loading model ($model_class): $err"
         unless $res;
 
-    my $es = Elasticsearch::Compat->new( %{ $settings->{es} || {} } );
+    my $es = Search::Elasticsearch::Compat->new( %{ $settings->{es} || {} } );
     my $model = $model_class->new( es => $es );
 
     my $view_conf = $settings->{views} || {};
@@ -115,7 +115,7 @@ L<Elastic::Model>).
 =head2 es
 
 Any parameters specified in C<es> will be passed directly to
-L<Elasticsearch::Compat/new()>.
+L<Search::Elasticsearch::Compat/new()>.
 
 =head2 views
 
@@ -187,7 +187,7 @@ L<Dancer>
 
 =item *
 
-L<Elasticsearch::Compat>
+L<Search::Elasticsearch::Compat>
 
 =back
 
