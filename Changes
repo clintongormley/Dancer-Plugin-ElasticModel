@@ -1,3 +1,6 @@
+0.08    2014-03-17
+        Added test dependency on YAML
+
 0.07    2014-03-14
         Use Search::Elasticsearch::Compat
         See https://github.com/elasticsearch/elasticsearch-perl/issues/20
